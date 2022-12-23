@@ -44,7 +44,7 @@
                 <td>gst in dollars $</td>
                 <td>pst in dollars $</td>
                 <td>total of receipt in $:</td>
-                <td><button><a href="../controllers/delete.php?id=id%20#">Delete</a></button></td>
+                <td><button><a href="delete.php?id=id%20#">Delete</a></button></td>
             </tr>
         <!--example row-->
             <tr>
@@ -57,7 +57,7 @@
                 <td>$2.25</td>
                 <td>$3.15</td>
                 <td>$50.40</td>
-                <td><button><a href="../controllers/delete.php?id=12345">Delete</a></button></td>
+                <td><button><a href="delete.php?id=12345">Delete</a></button></td>
             </tr>
         <?php foreach ( $items as $item ) :?>
             <tr>
@@ -71,7 +71,7 @@
                 <td> <?=$item['gst']?> </td>
                 <td> <?=$item['pst']?> </td>
                 <td> <?= $item['price'] + $item['gst'] + $item['pst'] ?> </td>
-                <td><button type="submit"><a href="../controllers/delete.php?id=<?=$item['id']?>">Delete</a></button></td>
+                <td><button type="submit"><a href="delete.php?id=<?=$item['id']?>">Delete</a></button></td>
             </tr>
         <?php endforeach;?>
         </tbody>

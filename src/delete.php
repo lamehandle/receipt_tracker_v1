@@ -9,6 +9,6 @@ $id = $_GET['id'];
 $db = new Database();
 $query = "DELETE FROM `line_items` WHERE `id` = $id";
 $stmt = $db->query($query);
-header('location:index.php');
+require './index.php';
 
 }
