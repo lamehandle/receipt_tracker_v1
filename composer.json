@@ -1,0 +1,15 @@
+{
+  "name": "james/src",
+  "require": {
+    "ext-pdo": "*",
+    "thiagoalessio/tesseract_ocr": "^2.12"
+     },
+  "autoload": {
+    "psr-4":
+    {"app\\": "src"}
+  },
+  "config": {
+    "process-timeout": 0
+  }
+
+}
