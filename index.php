@@ -11,11 +11,13 @@
 <body>
 <h1>Current Receipts</h1>
 <nav class="nav">
-    <ul>
-        <li><a href="index.php">Display</a></li>
-        <li><a href="create.php">Create</a></li>
-        <li><a href="about.php">About</a></li>
-    </ul>
+    <div class="nav-bk">
+        <ul>
+            <li><a href="index.php">Display</a></li>
+            <li><a href="create.php">Create</a></li>
+            <li><a href="about.php">About</a></li>
+        </ul>
+    </div>
 </nav>
 <div>
     <h3>These Items are populated from the Database</h3>
@@ -24,6 +26,7 @@
    </p>
 </div>
 <h2>These are the Current Items</h2>
+        <?php include 'read.php'; ?>
     <table>
         <thead>
         <tr>
@@ -49,11 +52,10 @@
                 <td>$0.05</td>
                 <td>$0.07</td>
                 <td>$100.12</td>
-                <td><button><a href=""></a>Edit</button></td>
+                <td><button><a href=""></a>Update</button></td>
                 <td><button><a href=""></a>Delete</button></td>
             </tr>
 
-        <?php include'populate_rows.php'; ?>
         <?php foreach ($items as $item) :?>
             <tr>
                 <td>    <?=$item['id']?>              </td>
@@ -64,7 +66,7 @@
                 <td>    $<?=(int)$item['pst']/100?>   </td>
                 <td>    $<?=(int)$item['gst']/100?>   </td>
                 <td>    $<?=((int)$item['price'] + (int)$item['pst'] + (int)$item['gst'])/100?></td>
-                <td><button class="edit"><a href="">Edit</a></button></td>
+                <td><button class="edit"><a href="update.php">Update</a></button></td>
                 <td><button class="del"><a href="delete_row.php?id=<?=$item['id']?>">Delete</a></button></td>
             <?php endforeach;?>
         </tr>
@@ -72,10 +74,23 @@
         <tfoot>
         <tr>
             <td colspan="6"></td>
-            <td >Total:</td>
+            <td>Total:</td>
             <td>$<?=$total?> </td>
+            <td colspan="1"></td>
+            <td><button class="add"><a href="create.php"> Add+ </a></button></td>
         </tr>
         </tfoot>
     </table>
+<footer>
+    <nav class="foot">
+        <div id="nav">
+            <ul>
+                <li><a href="index.php">Display</a></li>
+                <li><a href="create.php">Create</a></li>
+                <li><a href="about.php">About</a></li>
+            </ul>
+        </div>
+    </nav>
+</footer>
 </body>
 </html>

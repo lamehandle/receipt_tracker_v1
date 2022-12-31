@@ -29,14 +29,19 @@ class Database {
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
 
-          return new PDO($this->dsn, $this->username, $this->password, $this->options);
 
+        try {
+             $db =  new PDO($this->dsn, $this->username, $this->password, $this->options);
+        }catch (PDOException $e){
+//            echo "there is an error {$e->getMessage()} and {$e->getCode()}";
+            throw new PDOException($e->getMessage(), (int)$e->getCode());
+        }
     }
 
-    public function query($query) {
-        $db = $this->connect();
-        return $db->query($query);
-
-    }
+//    public function query($query) {
+//        $db = $this->connect();
+//        return $db->query($query);
+//
+//    }
 
 }
