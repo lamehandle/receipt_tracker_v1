@@ -17,7 +17,7 @@ nav li{
 nav-bk{
     background-color: yellowgreen;
     display: inline-block;
-    max-width: 500px;
+    max-width: 2fr;
     padding: 30px;
     margin: 0;
 

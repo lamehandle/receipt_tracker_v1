@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                             VALUES   ( :vendor,:item,:category,:price,:gst,:pst,:date )";
 
     $db = new PDO($dsn, $username, $password, $options  );
-    $db->prepare($sql)->execute($values); //todo rewrite Database to be more general
+    $db->prepare($sql)->execute($values);
 
 require 'index.php';
 }

@@ -43,18 +43,6 @@
         </tr>
         </thead>
         <tbody>
-            <tr>
-               <td>1234</td>
-                <td>T-Shirt</td>
-                <td>TeePublic</td>
-                <td>Clothing</td>
-                <td>$100.00</td>
-                <td>$0.05</td>
-                <td>$0.07</td>
-                <td>$100.12</td>
-                <td><button><a href=""></a>Update</button></td>
-                <td><button><a href=""></a>Delete</button></td>
-            </tr>
 
         <?php foreach ($items as $item) :?>
             <tr>
@@ -66,7 +54,7 @@
                 <td>    $<?=(int)$item['pst']/100?>   </td>
                 <td>    $<?=(int)$item['gst']/100?>   </td>
                 <td>    $<?=((int)$item['price'] + (int)$item['pst'] + (int)$item['gst'])/100?></td>
-                <td><button class="edit"><a href="update.php">Update</a></button></td>
+                <td><button class="edit"><a href="update.php?id=<?=$item['id']?>">Edit</a></button></td>
                 <td><button class="del"><a href="delete_row.php?id=<?=$item['id']?>">Delete</a></button></td>
             <?php endforeach;?>
         </tr>
