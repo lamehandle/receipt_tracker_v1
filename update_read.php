@@ -20,19 +20,33 @@ if( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
     $id = (int) $_GET['id'] ?? 0;
 
     $sql = "SELECT * FROM line_items WHERE id= $id";
+
     $item = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
-    $total = (int)$item['price'] + (int)$item['gst'] + (int)$item['pst'] / 100;
-
-
+    $price = (float)$item['price']/100;
+    $gst = (float)$item['gst']/100;
+    $pst = (float)$item['pst']/100;
+    $subtotal = $price + $gst + $pst;
+    $total = number_format($subtotal,'2','.');
 }else{
     require 'index.php';
 }
 
 if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-    $update = $_POST;
 
-    $sql = "UPDATE line_items WHERE id= :id";
-    $db->prepare($sql)->execute(['id'=>$update['id']]); //todo fix this to update table
+    $id = $_POST['id'];
+    $values = [
+        'vendor'    =>$_POST['vendor'],
+        'item'      =>$_POST['item'],
+        'category'  =>$_POST['category'],
+        'price'     =>$_POST['price'],
+        'gst'       =>$_POST['gst'],
+        'pst'       =>$_POST['pst'],
+        'date'      =>$_POST['date'],
+    ];
+
+    $sql = "UPDATE line_items SET vendor=:vendor , item=:item, category=:category, price=:price, gst=:gst, pst=:pst, date=:date WHERE id=:id";
+
+    $db->prepare($sql)->execute($values); //todo fix this to update table
 
 }
 

@@ -32,18 +32,28 @@ li:hover {
 color: aquamarine;
 }
 /*table*/
+
 td {
     align-content: center;
+    padding-left: 1em;
+}
+tr {
+    padding-left: 2em;
 }
 tr:nth-child(even) {
-    background: #CCC
+    background: #CCC;
+    padding-left: 1em;
 }
 tr:nth-child(odd) {
-    background: #FFF
+    background: #FFF;
+    padding-left: 1em;
 }
 
 tr:hover {
     background: yellowgreen ;
+}
+.cell {
+    padding-left: 1em;
 }
 
 

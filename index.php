@@ -31,31 +31,49 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>Name</th>
             <th>Vendor</th>
+            <th>Name</th>
             <th>Category</th>
             <th>Price</th>
             <th>GST</th>
             <th>PST</th>
             <th>Total</th>
+            <th>Date</th>
             <th></th>
             <th></th>
         </tr>
         </thead>
         <tbody>
+<!--        --><?php //foreach ($items as $item) :?>
+<!--        <tr>-->
+<!--            <td>    --><?//= $item['id']?><!--              </td>-->
+<!--            <td>    --><?//= $item['vendor']?><!--          </td>-->
+<!--            <td>    --><?//= $item['item']?><!--            </td>-->
+<!--            <td>    --><?//= $item['category']?><!--        </td>-->
+<!--            <td>    $--><?//= number_format((int)$item['price']/100.00,'2','.')?><!-- </td>-->
+<!--            <td>    $--><?//= number_format((int)$item['pst']/100.00,'2','.')?><!--   </td>-->
+<!--            <td>    $--><?//= number_format((int)$item['gst']/100.00,'2','.')?><!--   </td>-->
+<!--            <td>    $--><?//= number_format(((int)$item['price']/100.00) + ($item['pst']/100.00) + ((int)$item['gst']/100),'2','.') ?><!--</td>-->
+<!--            <td>    --><?//=  date('Y-m_d', strtotime($item['date']))?><!-- </td>-->
+<!---->
+<!--            <td><button class="edit"><a href="update.php?id=--><?//=$item['id']?><!--">Edit</a></button></td>-->
+<!--            <td><button class="del"><a href="delete_row.php?id=--><?//=$item['id']?><!--">Delete</a></button></td>-->
+<!--            --><?php //endforeach;?>
 
-        <?php foreach ($items as $item) :?>
-            <tr>
-                <td>    <?=$item['id']?>              </td>
-                <td>    <?=$item['item']?>            </td>
-                <td>    <?=$item['vendor']?>          </td>
-                <td>    <?=$item['category']?>        </td>
-                <td>    $<?=(int)$item['price']/100?> </td>
-                <td>    $<?=(int)$item['pst']/100?>   </td>
-                <td>    $<?=(int)$item['gst']/100?>   </td>
-                <td>    $<?=((int)$item['price'] + (int)$item['pst'] + (int)$item['gst'])/100?></td>
-                <td><button class="edit"><a href="update.php?id=<?=$item['id']?>">Edit</a></button></td>
-                <td><button class="del"><a href="delete_row.php?id=<?=$item['id']?>">Delete</a></button></td>
+        <?php foreach ($values as $item) :?>
+        <tr>
+            <td>    <?= $item['id']?>               </td>
+            <td>    <?= $item['vendor']?>           </td>
+            <td>    <?= $item['item']?>             </td>
+            <td>    <?= $item['category']?>         </td>
+            <td>    $<?= $item['price']?>           </td>
+            <td>    $<?= $item['pst']?>             </td>
+            <td>    $<?= $item['gst']?>             </td>
+            <td>    $<?= $item['total']?>           </td>
+            <td>    <?=  $item['date']?>            </td>
+
+            <td><button class="edit"><a href="update.php?id=<?=$item['id']?>">Edit</a></button></td>
+            <td><button class="del"><a href="delete_row.php?id=<?=$item['id']?>">Delete</a></button></td>
             <?php endforeach;?>
         </tr>
         </tbody>
@@ -63,7 +81,7 @@
         <tr>
             <td colspan="6"></td>
             <td>Total:</td>
-            <td>$<?=$total?> </td>
+            <td>$<?=number_format($item_totals,'2','.')?> </td>
             <td colspan="1"></td>
             <td><button class="add"><a href="create.php"> Add+ </a></button></td>
         </tr>
