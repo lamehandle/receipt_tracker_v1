@@ -32,14 +32,13 @@ li:hover {
 color: aquamarine;
 }
 /*table*/
-
-td {
-    align-content: center;
+.editing {
     padding-left: 1em;
 }
-tr {
-    padding-left: 2em;
+td {
+        padding-left: 1em;
 }
+
 tr:nth-child(even) {
     background: #CCC;
     padding-left: 1em;
@@ -52,9 +51,7 @@ tr:nth-child(odd) {
 tr:hover {
     background: yellowgreen ;
 }
-.cell {
-    padding-left: 1em;
-}
+
 
 
 .del:hover {

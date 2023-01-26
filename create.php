@@ -32,21 +32,22 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
         <form action="create_entry.php" method="post">
 
             <div class="mb-3">
-                <div id="vendor" class="form-text">Name of vendor.</div>
-                <label for="vendor" class="form-label">Vendor </label>
-                <input type="text" class="form-control field" id="vendor" aria-describedby="vendor" name="vendor">
+                <div id="vendor" class="form-text">
+                    Vendor:
+                </div>
+                  <input type="text" class="form-control field" id="vendor" aria-describedby="vendor" name="vendor">
             </div>
             <br>
             <div class="mb-3">
-                <label for="item" class="form-label">Item name</label>
+                <label for="item" class="form-label">Name:</label>
                 <div id="item" class="form-text">Enter the name of the item from your receipt.</div>
                 <input type="text" class="form-control field" id="item" aria-describedby="item" name="item">
             </div>
             <br>
             <?php include 'create_entry.php'; ?>
             <div class="mb-3">
-                <div id="category" class="form-text">Receipt Category</div>
-                <label for="category" class="form-label">Category:</label>
+                <div id="category" class="form-text">Category:</div>
+
                 <select class="form-select field" aria-label="category" name="category">
                         <?php foreach ($categories as $cat) : ?>
                         <option value="<?php echo $cat ?>"> <?php echo $cat ?> </option>
@@ -55,26 +56,26 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
             </div>
             <br>
             <div class="mb-3">
-                <div id="price" class="form-text">Item price.</div>
-                <label for="price" class="form-label">Price</label>
+                <div id="price" class="form-text">Price:</div>
                 <input type="number" step="0.01" min="0.00" class="form-control field" id="price" aria-describedby="price" name="price">
             </div>
             <br>
             <div class="mb-3">
-                <div id="gst" class="form-text">GST on Item.</div>
-                <label for="gst" class="form-label">GST</label>
+                <div id="gst" class="form-text">GST Amount:</div>
+
                 <input type="number" step="0.01" min="0.00" class="form-control field" id="gst" aria-describedby="gst" name="gst">
             </div>
             <br>
             <div class="mb-3">
-                <label for="gst" class="form-label">PST</label>
+                <div id="price" class="form-text">PST Amount:</div>
+
                 <input type="number" step="0.01" min="0.00" class="form-control field" id="price" aria-describedby="price" name="pst">
-                <div id="gst" class="form-text">PST on Item</div>
+
             </div>
             <br>
             <div class="mb-3">
-                <div id="date" class="form-date">Date of Purchase</div>
-                <label for="date" class="form-label">Date</label>
+                <div id="date" class="form-date">Date of Purchase:</div>
+
                 <input type="date"  class="form-control field" id="date" aria-describedby="date" name="date">
             </div>
             <br>

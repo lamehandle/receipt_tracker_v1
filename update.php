@@ -47,14 +47,14 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
         <tbody>
 
         <?php include 'update_read.php'; ?>
-        <tr>
+        <tr class="editing">
             <td> <?=$item['id']?>              </td>
-            <td> <?=$item['item']?>            </td>
             <td> <?=$item['vendor']?>          </td>
+            <td> <?=$item['item']?>            </td>
             <td> <?=$item['category']?>        </td>
-            <td> $<?= number_format((int)$item['price']/100,'2','.')?> </td>
-            <td> $<?=number_format((int)$item['pst']/100,'2','.')?>   </td>
-            <td> $<?=number_format((int)$item['gst']/100,'2','.')?>   </td>
+            <td> $<?=$price?> </td>
+            <td> $<?=$pst?>   </td>
+            <td> $<?=$gst?>   </td>
             <td> $<?=$total?>                 </td>
             <td> <?=$item['date']?> </td>
         </tr>
@@ -66,8 +66,8 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                 <td>
                     <div class="cell">
                          <div class="mb-3">
-                             <label for="id" class="form-label">Id:</label>
-                             <input type="text" class="form-control field" id="id" aria-describedby="id" name="id" readonly value="<?=$item['id']?>">
+<!--                             <label for="id" class="form-label">Id:</label>-->
+                             <input type="text" class="form-control field" id="id" aria-describedby="id" name="id" readonly placeholder="<?=$item['id']?>">
                          </div>
                     </div>
                 </td>
@@ -75,8 +75,8 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                 <td>
                     <div class="cell">
                         <div class="mb-3">
-                            <label for="vendor" class="form-label">Vendor:</label>
-                            <input type="text" class="form-control field" id="vendor" aria-describedby="vendor" name="vendor" value="<?=$item['vendor']??'unknown'?>">
+<!--                            <label for="vendor" class="form-label">Vendor:</label>-->
+                            <input type="text" class="form-control field" id="vendor" aria-describedby="vendor" name="vendor" placeholder="<?=$item['vendor']?>">
                         </div>
                     </div>
                 </td>
@@ -84,8 +84,8 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                 <td>
                     <div class="cell">
                         <div class="mb-3">
-                            <label for="item" class="form-label">Name:</label>
-                            <input type="text" class="form-control field" id="item" aria-describedby="item" name="item" value="<?=$item['item']??'unknown'?>">
+<!--                            <label for="item" class="form-label">Name:</label>-->
+                            <input type="text" class="form-control field" id="item" aria-describedby="item" name="item" placeholder="<?=$item['item']?>">
                         </div>
                     </div>
                 </td>
@@ -94,7 +94,7 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                     <div class="cell">
                          <div class="mb-3">
                              <?php include 'categories.php'; ?>
-                             <label for="category" class="form-label">Category:</label>
+<!--                             <label for="category" class="form-label">Category:</label>-->
                              <select class="form-select field" aria-label="category" name="category" id="category">
                                  <option value="<?=$item['category']?>"> <?=$item['category']?> </option>
                                     <?php foreach ($categories as $cat) : ?>
@@ -108,8 +108,8 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                 <td>
                     <div class="cell">
                             <div class="mb-3">
-                                <label for="price" class="form-label">Price:</label>
-                                <input type="text" class="form-control field" id="price" aria-describedby="price" name="price" value="$<?=(int)$item['price']/100?>">
+<!--                                <label for="price" class="form-label">Price:</label>-->
+                                <input type="text" class="form-control field" id="price" aria-describedby="price" name="price" placeholder="$<?= $price?>" >
                             </div>
 
                     </div>
@@ -117,19 +117,10 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
 
                 <td>
                     <div class="cell">
-                            <div class="mb-3">
-                                <label for="pst" class="form-label">PST:</label>
-                                <input type="text" class="form-control field" id="pst" aria-describedby="pst" name="pst" value="$<?=(int)$item['pst']/100?>">
-                            </div>
-
-                    </div>
-                </td>
-                <td>
-                    <div class="cell">
-                            <div class="mb-3">
-                                <label for="gst" class="form-label">GST:</label>
-                                <input type="text" class="form-control field" id="gst" aria-describedby="gst" name="gst" value="$<?=(int)$item['gst']/100?>">
-                            </div>
+                        <div class="mb-3">
+<!--                            <label for="gst" class="form-label">GST:</label>-->
+                            <input type="text" class="form-control field" id="gst" aria-describedby="gst" name="gst" placeholder="$<?=$gst?>">
+                        </div>
 
                     </div>
                 </td>
@@ -137,24 +128,35 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                 <td>
                     <div class="cell">
                             <div class="mb-3">
-                                <label for="pst" class="form-label">PST:</label>
-                                <input type="text" class="form-control field" id="pst" aria-describedby="gst" name="pst" value="$<?=(int)$item['pst']/100?>">
+<!--                                <label for="pst" class="form-label">PST:</label>-->
+                                <input type="text" class="form-control field" id="pst" aria-describedby="pst" name="pst" placeholder="$<?=$pst?>">
                             </div>
 
                     </div>
                 </td>
+
 
                 <td>
                     <div class="cell">
                             <div class="mb-3">
-                                <label for="total" class="form-label">Total:</label>
-                                <input type="text" class="form-control field" id="total" aria-describedby="total" name="total" value="$<?=$total?>">
+<!--                                <label for="total" class="form-label">Total:</label>-->
+                                <input type="text" class="form-control field" id="total" aria-describedby="total" name="total" placeholder="$<?=$total?>">
                             </div>
                     </div>
                 </td>
-            </tr>
+
+            <td>
+                <div class="cell">
+                    <div class="mb-3">
+<!--                        <label for="date" class="form-label">Date:</label>-->
+                        <input type="date" class="form-control field" id="date" aria-describedby="date" name="date" value="<?=$item['date']?>">
+                    </div>
+
+                </div>
+            </td>
 
             <td><button type="submit">Submit Change</button></td>
+            </tr>
 
         </tfoot>
         </form>
