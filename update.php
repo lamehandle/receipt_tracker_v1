@@ -53,8 +53,8 @@
             <td> <?=$item['item']?>            </td>
             <td> <?=$item['category']?>        </td>
             <td> $<?=$price?> </td>
-            <td> $<?=$pst?>   </td>
             <td> $<?=$gst?>   </td>
+            <td> $<?=$pst?>   </td>
             <td> $<?=$total?>                 </td>
             <td> <?=$item['date']?> </td>
         </tr>
