@@ -14,9 +14,9 @@
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
 
-$sql = "SELECT * FROM line_items";
-
 $db = new PDO( $dsn, $username, $password, $options  );
+
+$sql = "SELECT * FROM line_items";
 
 $items = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
@@ -30,7 +30,7 @@ $values = array_map(function($item) {
                     'gst'      =>  number_format((int)$item['gst'] / 100.00, '2', '.'),
                     'pst'      =>  number_format((int)$item['pst'] / 100.00, '2', '.'),
                     'total'    =>  number_format(((int)$item['price'] / 100.00) + ($item['pst'] / 100.00) + ((int)$item['gst'] / 100), '2', '.'),
-                    'date'     =>  date('Y-m_d', strtotime($item['date'])),
+                    'date'     =>  $item['date'],
           ];
 
     },$items);

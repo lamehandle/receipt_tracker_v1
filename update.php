@@ -9,7 +9,7 @@
     <title>Financial Tracking</title>
 </head>
 <body>
-<h1>Current Receipts</h1>
+<h1>Current Receipt</h1>
 <nav class="nav">
     <div id="nav-bk">
         <ul>
@@ -23,9 +23,10 @@
 <div>
     <h3>These Items are populated from the Database</h3>
     <p>ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi totam?
+    Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi totam?
    </p>
 </div>
+
 <section>
 
     <table>
@@ -45,8 +46,7 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
         </tr>
         </thead>
         <tbody>
-
-        <?php include 'update_read.php'; ?>
+        <?php include 'update_get.php'; ?>
         <tr class="editing">
             <td> <?=$item['id']?>              </td>
             <td> <?=$item['vendor']?>          </td>
@@ -60,14 +60,14 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
         </tr>
 
         </tbody>
-        <form action="update_read.php" method="post">
+        <form action="update_post.php" method="post">
         <tfoot>
             <tr>
                 <td>
                     <div class="cell">
                          <div class="mb-3">
 <!--                             <label for="id" class="form-label">Id:</label>-->
-                             <input type="text" class="form-control field" id="id" aria-describedby="id" name="id" readonly placeholder="<?=$item['id']?>">
+                             <input type="text" class="form-control field" id="id" aria-describedby="id" name="id" readonly value="<?=$item['id']?>">
                          </div>
                     </div>
                 </td>
@@ -76,7 +76,7 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                     <div class="cell">
                         <div class="mb-3">
 <!--                            <label for="vendor" class="form-label">Vendor:</label>-->
-                            <input type="text" class="form-control field" id="vendor" aria-describedby="vendor" name="vendor" placeholder="<?=$item['vendor']?>">
+                            <input type="text" class="form-control field" id="vendor" aria-describedby="vendor" name="vendor" value="<?=$item['vendor']?>">
                         </div>
                     </div>
                 </td>
@@ -85,7 +85,7 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                     <div class="cell">
                         <div class="mb-3">
 <!--                            <label for="item" class="form-label">Name:</label>-->
-                            <input type="text" class="form-control field" id="item" aria-describedby="item" name="item" placeholder="<?=$item['item']?>">
+                            <input type="text" class="form-control field" id="item" aria-describedby="item" name="item" value="<?=$item['item']?>">
                         </div>
                     </div>
                 </td>
@@ -109,7 +109,7 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                     <div class="cell">
                             <div class="mb-3">
 <!--                                <label for="price" class="form-label">Price:</label>-->
-                                <input type="text" class="form-control field" id="price" aria-describedby="price" name="price" placeholder="$<?= $price?>" >
+                                <input type="text" class="form-control field" id="price" aria-describedby="price" name="price" value="$<?= $price?>" >
                             </div>
 
                     </div>
@@ -119,7 +119,7 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                     <div class="cell">
                         <div class="mb-3">
 <!--                            <label for="gst" class="form-label">GST:</label>-->
-                            <input type="text" class="form-control field" id="gst" aria-describedby="gst" name="gst" placeholder="$<?=$gst?>">
+                            <input type="text" class="form-control field" id="gst" aria-describedby="gst" name="gst" value="$<?=$gst?>">
                         </div>
 
                     </div>
@@ -129,18 +129,17 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
                     <div class="cell">
                             <div class="mb-3">
 <!--                                <label for="pst" class="form-label">PST:</label>-->
-                                <input type="text" class="form-control field" id="pst" aria-describedby="pst" name="pst" placeholder="$<?=$pst?>">
+                                <input type="text" class="form-control field" id="pst" aria-describedby="pst" name="pst" value="$<?=$pst?>">
                             </div>
 
                     </div>
                 </td>
 
-
                 <td>
                     <div class="cell">
                             <div class="mb-3">
 <!--                                <label for="total" class="form-label">Total:</label>-->
-                                <input type="text" class="form-control field" id="total" aria-describedby="total" name="total" placeholder="$<?=$total?>">
+                                <input type="text" class="form-control field" id="total" aria-describedby="total" name="total" value="$<?=$total?>">
                             </div>
                     </div>
                 </td>

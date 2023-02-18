@@ -44,22 +44,6 @@
         </tr>
         </thead>
         <tbody>
-<!--        --><?php //foreach ($items as $item) :?>
-<!--        <tr>-->
-<!--            <td>    --><?//= $item['id']?><!--              </td>-->
-<!--            <td>    --><?//= $item['vendor']?><!--          </td>-->
-<!--            <td>    --><?//= $item['item']?><!--            </td>-->
-<!--            <td>    --><?//= $item['category']?><!--        </td>-->
-<!--            <td>    $--><?//= number_format((int)$item['price']/100.00,'2','.')?><!-- </td>-->
-<!--            <td>    $--><?//= number_format((int)$item['pst']/100.00,'2','.')?><!--   </td>-->
-<!--            <td>    $--><?//= number_format((int)$item['gst']/100.00,'2','.')?><!--   </td>-->
-<!--            <td>    $--><?//= number_format(((int)$item['price']/100.00) + ($item['pst']/100.00) + ((int)$item['gst']/100),'2','.') ?><!--</td>-->
-<!--            <td>    --><?//=  date('Y-m_d', strtotime($item['date']))?><!-- </td>-->
-<!---->
-<!--            <td><button class="edit"><a href="update.php?id=--><?//=$item['id']?><!--">Edit</a></button></td>-->
-<!--            <td><button class="del"><a href="delete_row.php?id=--><?//=$item['id']?><!--">Delete</a></button></td>-->
-<!--            --><?php //endforeach;?>
-
         <?php foreach ($values as $item) :?>
         <tr>
             <td>    <?= $item['id']?>               </td>

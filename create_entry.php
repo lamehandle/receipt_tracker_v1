@@ -14,26 +14,6 @@ $options = [
 ];
 
 
-$categories = [
-            "Alcohol",
-            "Auto",
-            "Bakery",
-            "Clothing",
-            "Deli",
-            "Entertainment",
-            "Household",
-            "Maintenance",
-            "Meat",
-            "Medical",
-            "Produce",
-            "Seafood",
-            "Seafood",
-            "Snacks",
-            "Toys",
-            "Utilities",
-            "Weed",
-];
-sort($categories, SORT_STRING);
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -53,6 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $db = new PDO($dsn, $username, $password, $options  );
     $db->prepare($sql)->execute($values);
+    require 'index.php';
 
-require 'index.php';
+}else{
+
+    echo "sorry nothing submitted.";
+    require 'index.php';
 }

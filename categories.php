@@ -1,7 +1,7 @@
 <?php
 
 
-return $categories = [
+$categories = [
     "Alcohol",
     "Auto",
     "Bakery",
@@ -14,9 +14,9 @@ return $categories = [
     "Medical",
     "Produce",
     "Seafood",
-    "Seafood",
     "Snacks",
     "Toys",
     "Utilities",
     "Weed",
 ];
+sort($categories, SORT_STRING);

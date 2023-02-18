@@ -32,21 +32,29 @@ Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi t
         <form action="create_entry.php" method="post">
 
             <div class="mb-3">
+
                 <div id="vendor" class="form-text">
-                    Vendor:
+                    <label for="vendor" class="form-label">Vendor:</label>
                 </div>
+
                   <input type="text" class="form-control field" id="vendor" aria-describedby="vendor" name="vendor">
             </div>
             <br>
             <div class="mb-3">
+
+                <div id="item">
                 <label for="item" class="form-label">Name:</label>
-                <div id="item" class="form-text">Enter the name of the item from your receipt.</div>
+                </div>
+
                 <input type="text" class="form-control field" id="item" aria-describedby="item" name="item">
             </div>
             <br>
-            <?php include 'create_entry.php'; ?>
+            <?php include 'categories.php'; ?>
             <div class="mb-3">
-                <div id="category" class="form-text">Category:</div>
+
+                <div id="category" class="form-text">
+                    <label for="item" class="form-label">Category:</label>
+                </div>
 
                 <select class="form-select field" aria-label="category" name="category">
                         <?php foreach ($categories as $cat) : ?>
