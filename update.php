@@ -75,7 +75,7 @@
                 <td>
                     <div class="cell">
                         <div class="mb-3">
-<!--                            <label for="vendor" class="form-label">Vendor:</label>-->
+
                             <input type="text" class="form-control field" id="vendor" aria-describedby="vendor" name="vendor" value="<?=$item['vendor']?>">
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                 <td>
                     <div class="cell">
                         <div class="mb-3">
-<!--                            <label for="item" class="form-label">Name:</label>-->
+
                             <input type="text" class="form-control field" id="item" aria-describedby="item" name="item" value="<?=$item['item']?>">
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                     <div class="cell">
                             <div class="mb-3">
 <!--                                <label for="price" class="form-label">Price:</label>-->
-                                <input type="text" class="form-control field" id="price" aria-describedby="price" name="price" value="$<?= $price?>" >
+                                <input type="text" class="form-control field" id="price" aria-describedby="price" name="price" placeholder="$<?= $price?>" >
                             </div>
 
                     </div>
@@ -119,7 +119,7 @@
                     <div class="cell">
                         <div class="mb-3">
 <!--                            <label for="gst" class="form-label">GST:</label>-->
-                            <input type="text" class="form-control field" id="gst" aria-describedby="gst" name="gst" value="$<?=$gst?>">
+                            <input type="text" class="form-control field" id="gst" aria-describedby="gst" name="gst" placeholder="$<?=$gst?>">
                         </div>
 
                     </div>
@@ -129,7 +129,7 @@
                     <div class="cell">
                             <div class="mb-3">
 <!--                                <label for="pst" class="form-label">PST:</label>-->
-                                <input type="text" class="form-control field" id="pst" aria-describedby="pst" name="pst" value="$<?=$pst?>">
+                                <input type="text" class="form-control field" id="pst" aria-describedby="pst" name="pst" placeholder="$<?=$pst?>">
                             </div>
 
                     </div>
@@ -139,7 +139,7 @@
                     <div class="cell">
                             <div class="mb-3">
 <!--                                <label for="total" class="form-label">Total:</label>-->
-                                <input type="text" class="form-control field" id="total" aria-describedby="total" name="total" value="$<?=$total?>">
+                                <input type="text" class="form-control field" id="total" aria-describedby="total" name="total" placeholder="$<?=$total?>">
                             </div>
                     </div>
                 </td>
@@ -148,7 +148,7 @@
                 <div class="cell">
                     <div class="mb-3">
 <!--                        <label for="date" class="form-label">Date:</label>-->
-                        <input type="date" class="form-control field" id="date" aria-describedby="date" name="date" value="<?=$item['date']?>">
+                        <input type="date" class="form-control field" id="date" aria-describedby="date" name="date" placeholder="<?=$item['date']?>">
                     </div>
 
                 </div>

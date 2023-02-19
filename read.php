@@ -9,31 +9,32 @@ $sql = "SELECT * FROM line_items";
 $items = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
     $values = array_map(function ($item) {
-        $price = (int)$item['price'] / 100;
-        $pst = (int)$item['pst'] / 100;
-        $gst = (int)$item['gst'] / 100;
-        $total = $price + $pst + $gst;
+        $price  = (float) $item['price'] / 100.00;
+        $pst    = (float) $item['pst']   / 100.00;
+        $gst    = (float) $item['gst']   / 100.00;
+        $total  = $price + $pst + $gst;
 
         return [
-            'id' => $item['id'],
-            'vendor' => $item['vendor'],
-            'item' => $item['item'],
-            'category' => $item['category'],
-            'price' => number_format($price),
-            'gst' => number_format($gst),
-            'pst' => number_format($pst),
-            'total' => number_format($total),
-            'date' => $item['date'],
+            'id'        => $item['id'],
+            'vendor'    => $item['vendor'],
+            'item'      => $item['item'],
+            'category'  => $item['category'],
+            'price'     => $price,
+            'gst'       => $gst,
+            'pst'       => $pst,
+            'total'     => $total,
+            'date'      => $item['date'],
         ];
     }, $items);
-$item_totals = array_reduce($items, function($carry, $rec ){
-       $price   = (int)$rec['price'] / 100;
-       $pst     = (int)$rec['pst']   / 100;
-       $gst     = (int)$rec['gst']   / 100;
 
-    $rec_total = $price + $pst + $gst;
-    return $carry + $rec_total;
-},0.0);
+    $item_totals = array_reduce( $items, function( $carry, $rec ){
+       $price   = (float) $rec['price'] / 100.00;
+       $pst     = (float) $rec['pst']   / 100.00;
+       $gst     = (float) $rec['gst']   / 100.00;
+
+        $rec_total = $price + $pst + $gst;
+        return $carry + $rec_total;
+    },0.0);
 
 
 

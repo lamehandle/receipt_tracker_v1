@@ -9,7 +9,7 @@
     <title>Financial Tracking</title>
 </head>
 <body>
-<h1>Current Receipts</h1>
+    <h1>Current Receipts</h1>
 <nav class="nav">
     <div class="nav-bk">
         <ul>
@@ -50,10 +50,10 @@
             <td>    <?= $item['vendor']?>           </td>
             <td>    <?= $item['item']?>             </td>
             <td>    <?= $item['category']?>         </td>
-            <td>    $<?= $item['price']?>           </td>
-            <td>    $<?= $item['pst']?>             </td>
-            <td>    $<?= $item['gst']?>             </td>
-            <td>    $<?= $item['total']?>           </td>
+            <td>    $<?= number_format($item['price'],'2','.')?>           </td>
+            <td>    $<?= number_format($item['pst'],'2','.')?>             </td>
+            <td>    $<?= number_format($item['gst'],'2','.')?>             </td>
+            <td>    $<?= number_format($item['total'],'2','.')?>           </td>
             <td>    <?=  $item['date']?>            </td>
 
             <td><button class="edit"><a href="update.php?id=<?=$item['id']?>">Edit</a></button></td>

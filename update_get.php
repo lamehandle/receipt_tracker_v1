@@ -9,11 +9,11 @@ if( $_SERVER['REQUEST_METHOD'] === 'GET' ) {
 
     $item = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
 
-    $price = number_format($item['price']/100,'2','.');
-    $gst = number_format($item['gst']/100,'2','.');
-    $pst = number_format($item['pst']/100,'2','.');
-    $subtotal = (float)(($item['price']/100) +($item['gst']/100) + ($item['pst']/100));
-    $total = number_format($subtotal,'2','.');
+    $price = number_format((float)$item['price']/100.00);
+    $gst = number_format((float)$item['gst']/100.00);
+    $pst = number_format((float)$item['pst']/100.00);
+    $subtotal = (((float)$item['price']/100.00) +((float)$item['gst']/100) + ((float)$item['pst']/100.00));
+    $total = number_format($subtotal);
 }
 
 
