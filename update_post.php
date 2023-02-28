@@ -1,4 +1,5 @@
 <?php
+
 $con = require 'config.php';
 $db = new PDO( $con['dsn'], $con['username'], $con['password'], $con['options']  );
 
@@ -22,9 +23,6 @@ if( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
         'date'      =>   date('Y-m_d H:i:s' , strtotime($_POST['date'])),
     ];
 
-    echo '<pre>';
-    var_dump($values);
-    echo '</pre>';
 
     $sql = "UPDATE line_items 
             SET vendor=:vendor , item=:item, category=:category, price=:price, gst=:gst, pst=:pst, total= :total, date=:date  

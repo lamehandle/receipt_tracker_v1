@@ -1,24 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
-    <title>Financial Tracking</title>
-</head>
-<body>
-    <h1>Current Receipts</h1>
-<nav class="nav">
-    <div class="nav-bk">
-        <ul>
-            <li><a href="index.php">Display</a></li>
-            <li><a href="create.php">Create</a></li>
-            <li><a href="about.php">About</a></li>
-        </ul>
-    </div>
-</nav>
+
+<?php require "./html_stubs/header.php"; ?>
+
 <div>
     <h3>These Items are populated from the Database</h3>
     <p>ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -67,20 +49,9 @@
             <td>Total:</td>
             <td>$<?=number_format($item_totals,'2','.')?> </td>
             <td colspan="1"></td>
-            <td><button class="add"><a href="create.php"> Add+ </a></button></td>
+            <td colspan="2"><button class="add"><a href="create.php"> Add+ </a></button></td>
         </tr>
         </tfoot>
     </table>
-<footer>
-    <nav class="foot">
-        <div id="nav">
-            <ul>
-                <li><a href="index.php">Display</a></li>
-                <li><a href="create.php">Create</a></li>
-                <li><a href="about.php">About</a></li>
-            </ul>
-        </div>
-    </nav>
-</footer>
-</body>
-</html>
+
+<?php require './html_stubs/footer.php'?>

@@ -1,35 +1,29 @@
 /*nav bar*/
+body{
+    background-color: burlywood;
+}
 nav li{
     display: inline-block;
     max-width: 500px;
     list-style-type: none;
     text-align: center;
-    padding: 30px;
-    margin: 0;
+    padding: 0;
+    margin: auto;
     background-color: cornsilk;
 }
 
-.nav {
-    display: inline-block;
-    font-size: 20px;
-    padding: 20px;
-}
-nav-bk{
-    background-color: yellowgreen;
-    display: inline-block;
-    max-width: 2fr;
-    padding: 30px;
-    margin: 0;
-
-}
-.foot {
+foot {
     display: inline-block;
     font-size: 12px;
-    padding: 0px;
+    padding: 0;
 }
 
 li:hover {
-color: aquamarine;
+    background-color: darkslategray;
+}
+
+a:hover{
+    color: darkgray;
 }
 /*table*/
 .editing {
@@ -50,23 +44,32 @@ tr:nth-child(odd) {
 
 tr:hover {
     background: yellowgreen ;
+
+    font-style: italic;
 }
 
-
-
-.del:hover {
-    color: #FFFFFF;
-    background-color: orangered;
-}
 
 button {
     border-radius: 25%;
 }
 .edit:hover {
     background-color: chartreuse;
+    color: cornsilk;
+    font-style: italic;
 }
-.add button{
-    background-color: green;
+
+.del:hover {
+    color: #CCCCCC;
+    background-color: orangered;
+    font-style: italic;
+}
+
+.add {
+    background-color: olivedrab ;
+}
+.add:hover{
+    background-color: limegreen;
+    font-style: italic;
 }
 
 a:link {

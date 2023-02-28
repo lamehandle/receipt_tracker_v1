@@ -1,4 +1,5 @@
 <?php
+
 if( $_SERVER['REQUEST_METHOD'] === 'GET' ) {
     $con = require 'config.php';
     $db = new PDO( $con['dsn'], $con['username'], $con['password'], $con['options']  );
