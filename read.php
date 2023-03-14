@@ -1,7 +1,7 @@
 <?php
 
 $con = require 'config.php';
-
+//todo set up db at home
 $db = new PDO( $con['dsn'], $con['username'], $con['password'], $con['options']  );
 
 $sql = "SELECT * FROM line_items";

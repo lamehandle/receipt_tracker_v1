@@ -7,8 +7,9 @@
     Beatae commodi dicta dolore est laborum, omnis quod repellat repellendus sequi totam?
    </p>
 </div>
-<h2>These are the Current Items</h2>
         <?php include 'read.php'; ?>
+<?php require './html_stubs/table.php'; ?>
+<h2>These are the Current Items</h2>
     <table>
         <thead>
         <tr>
