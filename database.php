@@ -2,13 +2,13 @@
 
 class database
 {
-    public string $host;
-    public string $dbname;
-    public string $port;
-    public string $charset;
-    public string $username;
-    public string $password;
-    public string $dsn;
+    protected string $host;
+    protected string $dbname;
+    protected string $port;
+    protected string $charset;
+    protected string $username;
+    protected string $password;
+    protected string $dsn;
 
 
     public function __construct(){
